@@ -21,6 +21,10 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+    @GetMapping("hello")
+    public String helloWorld(){
+        return "hi Hk!";
+    }
     @PostMapping
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto){
         UserDto savedUser = userService.createUser(userDto);

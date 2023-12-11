@@ -26,6 +26,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private ModelMapper modelMapper;
     @Override
+    //createing user
     public UserDto createUser(UserDto userDto) {
         //User user= UserMapper.mapTOUser(userDto);
         Optional<User> optionalUser= userRepository.findByEmail(userDto.getEmail());
