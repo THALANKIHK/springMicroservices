@@ -61,7 +61,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                                                                   WebRequest request) {
         Map<String,String>errors= new HashMap<>();
         List<ObjectError> allErrors = ex.getBindingResult().getAllErrors();
-        allErrors.stream().forEach((error)->{
+        allErrors.forEach((error)->{
            String fieldName= ((FieldError)(error)).getField();
            String message =error.getDefaultMessage();
             errors.put(fieldName,message);

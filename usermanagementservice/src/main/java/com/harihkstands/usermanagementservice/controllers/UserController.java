@@ -1,7 +1,6 @@
 package com.harihkstands.usermanagementservice.controllers;
 
 import com.harihkstands.usermanagementservice.dto.UserDto;
-import com.harihkstands.usermanagementservice.entity.User;
 import com.harihkstands.usermanagementservice.services.UserService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -11,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
