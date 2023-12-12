@@ -3,6 +3,7 @@ package com.harihkstands.usermanagementservice.controllers;
 import com.harihkstands.usermanagementservice.dto.UserDto;
 import com.harihkstands.usermanagementservice.entity.User;
 import com.harihkstands.usermanagementservice.services.UserService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class UserController {
         return "hi Hk!";
     }
     @PostMapping
-    public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto){
         UserDto savedUser = userService.createUser(userDto);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
 
@@ -42,7 +43,7 @@ public class UserController {
       return new ResponseEntity<>(user,HttpStatus.OK);
     }
     @PutMapping("{id}")
-    public ResponseEntity<UserDto> updatedUser(@PathVariable long id,@RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> updatedUser(@PathVariable long id,@Valid @RequestBody UserDto userDto){
         userDto.setId(id);
         UserDto savedUser = userService.updateUser(userDto);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);

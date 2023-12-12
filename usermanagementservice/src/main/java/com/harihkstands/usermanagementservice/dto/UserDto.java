@@ -1,10 +1,18 @@
 package com.harihkstands.usermanagementservice.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+
 public class UserDto {
 
     private Long Id;
+
+    @NotEmpty(message = "User first name should not be empty or null")
     private String firstName;
+    @NotEmpty(message = "User last name should not be empty or null")
     private String lastName;
+    @NotEmpty(message = "User email should not be empty or null")
+    @Email(message = "User email should be valid")
     private String email;
 
     public UserDto() {
